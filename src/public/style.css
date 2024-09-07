@@ -1,46 +1,26 @@
 body {
     font-family: Arial, sans-serif;
     margin: 50px;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
-    color: #333;
+
+img, .block-post-listing, .sr-only, .wprm-recipe-link, .wprm-unit-conversion-container, .shared-counts-wrap {
+    display: none;
 }
 
-form {
-    margin-bottom: 30px;
+img.image_show {
+    display: block;
 }
 
-input[type="text"] {
-    width: 300px;
-    padding: 5px;
+.wprm-recipe-meta-icon {
+    width: 30px;
+    aspect-ratio: 1;
+    margin: 10px;
 }
 
-button {
-    padding: 5px 10px;
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #4cae4c;
-}
-
-ul {
-    list-style-type: none;
-}
-
-li {
-    margin: 10px 0;
-}
-
-a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+.has-normal-font-size em{
+    display: none;
 }

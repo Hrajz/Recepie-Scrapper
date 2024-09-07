@@ -17,10 +17,10 @@ app.get("/", (req, res) => {
 
 // Route to handle search and display results
 app.get("/results", async (req, res) => {
-  const ingredients = req.query.ingredients || ""; // Default to empty string if not provided
+  const ingredients = req.query.ingredients || "";
 
   if (!ingredients) {
-    return res.render("results", { recipes: [], ingredients }); // Render empty results initially
+    return res.render("results", { recipes: [], ingredients });
   }
 
   try {
@@ -32,6 +32,28 @@ app.get("/results", async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 });
+
+// New route to display individual recipe details
+app.get("/recipe/:title", async (req, res) => {
+  const title = req.params.title;
+  const recipeUrl = req.query.url; // Assuming the URL is passed as a query parameter
+
+  if (!recipeUrl) {
+    return res.status(400).send("Recipe URL query parameter is required");
+  }
+
+  try {
+    const details = await scraper.scrapeRecipeDetails(recipeUrl);
+    if (!details) {
+      return res.status(404).send("Recipe not found");
+    }
+    res.render("recepie", { title, content: details.content });
+  } catch (error) {
+    console.error("Error fetching recipe details:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 
 // Start the server
 const PORT = process.env.PORT || 3000;

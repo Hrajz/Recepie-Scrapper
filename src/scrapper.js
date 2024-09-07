@@ -14,7 +14,7 @@ async function scrapeAllRecipes(ingredients) {
     console.log("AllRecipes Response Data Length:", response.data.length);
     const $ = cheerio.load(response.data);
     const htmlContent = $.html();
-    fs.writeFileSync("all.html", htmlContent);
+    // fs.writeFileSync("all.html", htmlContent);
     // console.log("AllRecipes Loaded HTML:", $.html());
 
     const recipes = [];
@@ -80,6 +80,23 @@ async function scrapeRecipes(ingredients) {
   }
 }
 
+
+async function scrapeRecipeDetails(url) {
+  try {
+    const response = await axios.get(url);
+    const $ = cheerio.load(response.data);
+
+    // Capture the entire content of the recipe page
+    const content = $(".entry-content").html(); // Adjust selector as needed
+
+    return { content };
+  } catch (error) {
+    console.error("Error scraping recipe details:", error);
+    return null;
+  }
+}
+
+
 // Top-level execution
 (async () => {
   try {
@@ -90,4 +107,4 @@ async function scrapeRecipes(ingredients) {
   }
 })();
 
-module.exports = { scrapeRecipes };
+module.exports = { scrapeRecipes, scrapeRecipeDetails };

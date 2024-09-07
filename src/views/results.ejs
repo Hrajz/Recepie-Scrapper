@@ -23,8 +23,8 @@
         <% if (recipes && recipes.length > 0) { %>
             <% recipes.forEach(recipe => { %>
                 <li>
-                    <h3><a href="<%= recipe.link %>" target="_blank"><%= recipe.title %></a></h3>
-                    <img src="<%= recipe.image %>" alt="<%= recipe.title %>" style="width:200px;height:auto;">
+                    <h3><a href="/recipe/<%= encodeURIComponent(recipe.title) %>?url=<%= encodeURIComponent(recipe.link) %>"><%= recipe.title %></a></h3>
+                    <img class="image_show" src="<%= recipe.image %>" alt="<%= recipe.title %>" style="width:200px;height:auto;">
                     <p><%= recipe.description %></p>
                     <p><strong>Last updated:</strong> <%= recipe.updated %></p>
                 </li>
