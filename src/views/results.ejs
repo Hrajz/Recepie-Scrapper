@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Search and Results</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Search for Recipes</h1>
+
+    <!-- Search Form -->
+    <form action="/results" method="get">
+        <label for="ingredients">Ingredients (comma-separated):</label>
+        <input type="text" id="ingredients" name="ingredients" value="<%= ingredients %>" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Results Below Search Form -->
+    <h2>Recipe Results</h2>
+    <ul>
+        <% if (recipes && recipes.length > 0) { %>
+            <% recipes.forEach(recipe => { %>
+                <li>
+                    <h3><a href="<%= recipe.link %>" target="_blank"><%= recipe.title %></a></h3>
+                    <img src="<%= recipe.image %>" alt="<%= recipe.title %>" style="width:200px;height:auto;">
+                    <p><%= recipe.description %></p>
+                    <p><strong>Last updated:</strong> <%= recipe.updated %></p>
+                </li>
+            <% }); %>
+        <% } else if (typeof recipes !== "undefined") { %> <!-- If no recipes found -->
+            <li>No recipes found for the given ingredients.</li>
+        <% } %>
+    </ul>
+
+</body>
+
+</html>
