@@ -106,6 +106,12 @@ a {
 
 .bg h1 {
     margin: 20px 10px 10px 40px;
+    text-align: center;
+}
+
+.index h2 {
+    text-align: center;
+    margin: 10px;
 }
 
 .blur {
@@ -119,6 +125,16 @@ a {
     backdrop-filter: blur(1px) saturate(180%);
     border-radius: 10px;
     color: white;
+}
+
+.wprm-nutrition-label {
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.wprm-recipe-instructions-container span, .bg li {
+    margin: 12px 4px;
+
 }
 
 @media (max-width: 600px) {
@@ -139,5 +155,13 @@ a {
         margin: 10px;
         padding: 10px;
         padding-right: 30px;
+    }
+
+    .bg h1 {
+        margin: 10px;
+    }
+
+    .bg {
+        font-size: 14px;
     }
 }
