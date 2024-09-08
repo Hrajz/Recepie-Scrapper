@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><%= title %></title>
     <link rel="stylesheet" href="/style.css">
      <style>
         /* Disable pointer events for all links */
         a {
             pointer-events: none;
-            color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
             text-decoration: none;
         }
 
     </style>
 </head>
-<body>
+<body class="bg">
     <h1><%= title %></h1>
-    <div>
+    <div class="blur">
         <%- content %> <!-- Renders raw HTML -->
     </div>
 </body>

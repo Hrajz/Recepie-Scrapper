@@ -3,18 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recipe Search</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <h1>Search for Recipes</h1>
-    <form action="/results" method="get">
-        <label for="ingredients">Ingredients (comma-separated):</label>
-        <input type="text" id="ingredients" name="ingredients" required>
-        <button type="submit">Search</button>
-    </form>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ipsam iusto ducimus. Deleniti dignissimos doloremque rem et. Voluptates qui maiores, eos voluptatum at dignissimos saepe tenetur commodi necessitatibus alias illum reprehenderit corporis harum adipisci sequi ab dolores possimus ducimus repellat aliquid tempore quaerat doloribus. Veniam eum minima recusandae quaerat harum, neque ea vel totam ipsam facilis at tenetur soluta suscipit esse? Tempora obcaecati voluptatibus doloribus eaque vel temporibus quos doloremque libero alias aliquid ipsam delectus praesentium labore accusamus, dicta fugit distinctio placeat ex laborum quam a corporis atque nisi! Ipsum modi cum cumque est distinctio reiciendis enim, reprehenderit nulla officiis!</p>
+    <div class="main">
+        <h1>Search for Recipes</h1>
+        <form action="/results" method="get">
+            <label for="ingredients">Ingredients (comma-separated):</label>
+            <input type="text" id="ingredients" name="ingredients" required>
+            <button class="btn" type="submit">Search</button>
+        </form>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ipsam iusto ducimus. Deleniti dignissimos doloremque rem et. Voluptates qui maiores, eos voluptatum at dignissimos saepe tenetur commodi necessitatibus alias illum reprehenderit corporis harum adipisci sequi ab dolores possimus ducimus repellat aliquid tempore quaerat doloribus. Veniam eum minima recusandae quaerat harum, neque ea vel totam ipsam facilis at tenetur soluta suscipit esse? Tempora obcaecati voluptatibus doloribus eaque vel temporibus quos doloremque libero alias aliquid ipsam delectus praesentium labore accusamus, dicta fugit distinctio placeat ex laborum quam a corporis atque nisi! Ipsum modi cum cumque est distinctio reiciendis enim, reprehenderit nulla officiis!</p>
+    </div>
+    <h2>Try our top rated Recepies across INDIA</h2>
+    <div class="recepie">
+        <% if (recipes && recipes.length > 0) { %>
+            <% recipes.forEach(recipe => { %>
+                <div class="container">
+                    <a class="align" href="/recipe/<%= encodeURIComponent(recipe.title) %>?url=<%= encodeURIComponent(recipe.link) %>">
+                        <img class="image_show image" src="<%= recipe.image %>" alt="<%= recipe.title %>">
+                        <h3><%= recipe.title %></h3>
+                    </a>
+                    <!-- <img class="image_show" src="<%= recipe.image %>" alt="<%= recipe.title %>" style="width:200px;height:auto;"> -->
+                    <!-- <p><%= recipe.description %></p> -->
+                    <p><strong>Last updated:</strong> <%= recipe.updated %></p>
+                </div>
+            <% }); %>
+        <% } else if (typeof recipes !== "undefined") { %> <!-- If no recipes found -->
+            <li>No recipes found for the given ingredients.</li>
+        <% } %>
+        </div>
 </body>
 
 </html>

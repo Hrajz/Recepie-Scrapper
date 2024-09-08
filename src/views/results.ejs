@@ -3,36 +3,40 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recipe Search and Results</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 
-<body>
-    <h1>Search for Recipes</h1>
-
-    <!-- Search Form -->
-    <form action="/results" method="get">
-        <label for="ingredients">Ingredients (comma-separated):</label>
-        <input type="text" id="ingredients" name="ingredients" value="<%= ingredients %>" required>
-        <button type="submit">Search</button>
-    </form>
+<body class="">
+    <div class="main">
+        <h1>Search for Recipes</h1>
+        <form action="/results" method="get">
+            <label for="ingredients">Ingredients (comma-separated):</label>
+            <input type="text" id="ingredients" name="ingredients" required>
+            <button class="btn" type="submit">Search</button>
+        </form>
+    </div>
 
     <!-- Display Results Below Search Form -->
     <h2>Recipe Results</h2>
-    <ul>
+    <div class="recepie">
         <% if (recipes && recipes.length > 0) { %>
             <% recipes.forEach(recipe => { %>
-                <li>
-                    <h3><a href="/recipe/<%= encodeURIComponent(recipe.title) %>?url=<%= encodeURIComponent(recipe.link) %>"><%= recipe.title %></a></h3>
-                    <img class="image_show" src="<%= recipe.image %>" alt="<%= recipe.title %>" style="width:200px;height:auto;">
-                    <p><%= recipe.description %></p>
+                <div class="container">
+                    <a class="align" href="/recipe/<%= encodeURIComponent(recipe.title) %>?url=<%= encodeURIComponent(recipe.link) %>">
+                        <img class="image_show image" src="<%= recipe.image %>" alt="<%= recipe.title %>">
+                        <h3><%= recipe.title %></h3>
+                    </a>
+                    <!-- <img class="image_show" src="<%= recipe.image %>" alt="<%= recipe.title %>" style="width:200px;height:auto;"> -->
+                    <!-- <p><%= recipe.description %></p> -->
                     <p><strong>Last updated:</strong> <%= recipe.updated %></p>
-                </li>
+                </div>
             <% }); %>
         <% } else if (typeof recipes !== "undefined") { %> <!-- If no recipes found -->
             <li>No recipes found for the given ingredients.</li>
         <% } %>
-    </ul>
+        </div>
 
 </body>
 

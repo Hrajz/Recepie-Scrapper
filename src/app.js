@@ -1,7 +1,10 @@
 const express = require("express");
 const path = require("path");
 const app = express();
+app.use(express.static("public"));
+
 const scraper = require("./scrapper");
+app.use(express.static("public"));
 
 // Set up view engine
 app.set("view engine", "ejs");
@@ -11,8 +14,16 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Route to render the search page
-app.get("/", (req, res) => {
-  res.render("index");
+app.get("/", async (req, res) => {
+  const ingredients = req.query.ingredients || "paneer onion maida rice";
+  try {
+    const recipes = await scraper.scrapeRecipes(ingredients);
+    console.log("Fetched Recipes:", recipes); // Debug fetched recipes
+    res.render("index", { recipes, ingredients });
+  } catch (error) {
+    console.error("Error fetching recipes:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 // Route to handle search and display results

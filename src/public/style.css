@@ -1,11 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 50px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* background-image: url("stefan-johnson-mCTatdD2fmk-unsplash\(1\).jpg"); */
+    background-position-y: top;
+    background-position-x: center;
+    /* background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
+
+
+
 }
 
+.bg {
+    background-image: url("stefan-johnson-mCTatdD2fmk-unsplash\(1\).jpg");
+    background-position-y: top;
+    background-position-x: center;
+}
 
 img, .block-post-listing, .sr-only, .wprm-recipe-link, .wprm-unit-conversion-container, .shared-counts-wrap {
     display: none;
@@ -21,6 +33,111 @@ img.image_show {
     margin: 10px;
 }
 
-.has-normal-font-size em{
+.has-normal-font-size em {
     display: none;
+}
+
+.main {
+    /* background-color: #ffffff;
+    background-image: linear-gradient(179deg, #ffffff 0%, #CCC0F5 100%); */
+    background-image: url("sergey-kotenev-l4U1u0bso6E-unsplash.jpg");
+    background-size: cover;
+    background-position-y: top;
+    background-position-x: center;
+    height: 60vh;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(47, 80, 172);
+}
+
+.container {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    padding-top: 20px;
+    margin: 15px;
+    border-radius: 7px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.align h3 {
+    width: 90%;
+    text-align: center;
+}
+
+.image {
+    width: 193px;
+    aspect-ratio: 1;
+    border-radius: 5px;
+}
+
+.image:hover {
+    scale: 1.1;
+    transition: 0.3s ease;
+}
+
+.recepie {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.bg h1 {
+    margin: 20px 10px 10px 40px;
+}
+
+.blur {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    padding-right: 50px;
+    /* border: 2px solid gold; */
+    background-color: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(1px) saturate(180%);
+    border-radius: 10px;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 39vw;
+        margin: 2.3%;
+    }
+
+    .image {
+        width: 110px;
+    }
+
+    .main {
+        height: 50vh;
+    }
+
+    .blur {
+        margin: 10px;
+        padding: 10px;
+        padding-right: 30px;
+    }
 }

@@ -87,7 +87,7 @@ async function scrapeRecipeDetails(url) {
     const $ = cheerio.load(response.data);
 
     // Capture the entire content of the recipe page
-    const content = $(".entry-content").html(); // Adjust selector as needed
+    const content = $(".entry-content").html(); 
 
     return { content };
   } catch (error) {
@@ -97,10 +97,9 @@ async function scrapeRecipeDetails(url) {
 }
 
 
-// Top-level execution
 (async () => {
   try {
-    const recipes = await scrapeRecipes("tomato,onion");
+    const recipes = await scrapeRecipes("paneer,onion");
     console.log("Recipes:", recipes);
   } catch (error) {
     console.error("Top-level Error:", error);
