@@ -17,6 +17,7 @@ body {
     background-image: url("stefan-johnson-mCTatdD2fmk-unsplash\(1\).jpg");
     background-position-y: top;
     background-position-x: center;
+    font-size: 18px;
 }
 
 img, .block-post-listing, .sr-only, .wprm-recipe-link, .wprm-unit-conversion-container, .shared-counts-wrap {
@@ -175,6 +176,6 @@ a {
     }
 
     .bg {
-        font-size: 15px;
+        font-size: 17px;
     }
 }
