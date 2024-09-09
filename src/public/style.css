@@ -48,6 +48,7 @@ img.image_show {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -130,6 +131,17 @@ a {
 .wprm-nutrition-label {
     border-radius: 10px;
     padding: 15px;
+}
+
+.main input {
+    border: none;
+    outline: none;
+    width: 290px;
+    height: 40px;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .wprm-recipe-instructions-container span, .bg li {
