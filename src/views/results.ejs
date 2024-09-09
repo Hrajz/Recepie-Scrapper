@@ -10,11 +10,17 @@
 
 <body class="index">
     <div class="main">
-        <h1>Search for Recipes</h1>
-        <form action="/results" method="get">
-            <label for="ingredients">Ingredients (comma-separated):</label>
-            <input type="text" id="ingredients" name="ingredients" required>
-            <button class="btn" type="submit">Search</button>
+        <h1 style="text-align: center; font-size: 55px; font-weight: bold; margin-top: 10px; 	
+            color: #fff; background-color: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(1px) saturate(180%); padding: 1px 10px; border-radius: 3px;">
+            \/𝓮𝓰𝓲e P𝓪𝓻𝓪𝓭𝓲𝓬e  
+        </h1>
+        <form action="/results" method="get" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; margin: 0px 5px;">
+            <input class="input" type="text" placeholder="Ingredients / Dishes" id="ingredients" name="ingredients" required>
+            <button type="submit" style="background-color: #85e56d; border: 1px solid #4CAF50; color: #ffffff; border-radius: 8px; padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 4px 4px;">
+                Search
+            </button>
+
         </form>
     </div>
 
