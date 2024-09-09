@@ -7,9 +7,21 @@
     <title>Recipe Search</title>
     <link rel="stylesheet" href="/style.css">
     <style>
-        @media (max-width: 600px) {
+       
+        li{
+            font-size: 13.5px;
+            list-style: none;
+            margin: 6px;
+        }
+        .about{
+            width: 300px;
+        }
+         @media (max-width: 720px) {
             .text {
             display: none;
+            }
+             .about{
+            width: 100%;
             }
         }
     </style>
@@ -53,6 +65,49 @@
             <li>No recipes found for the given ingredients.</li>
         <% } %>
         </div>
+
+
+        <!------------------------- footer------------------------ -->
+        <footer class="footer" style=" background-color: #313232;
+background-image: linear-gradient(135deg, #383e41 0%, #3e3e3f 100%);
+ height: fit-content; display: flex; flex-direction: column; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+
+            <div style=" height: fit-content; display: flex; flex-direction: row; justify-content: space-between; align-items: center; flex-wrap: wrap; border-bottom: 2px solid rgb(81, 76, 76); padding-bottom: 20px;">
+                <div class="about" style="display: flex; align-items: center; flex-direction: column; margin: 14px; padding: 15px 25px; color: #ffffff; border-right: 2px solid rgb(81, 76, 76);">
+                    <h4>About site</h4>
+                     <p style="font-size: 14px;">Discover a variety of delicious recipes tailored to the ingredients you have on hand. Our goal is to make cooking easy, fun, and accessible for everyone!</p>
+                </div>
+                <div class="about" style="display: flex; align-items: center; flex-direction: column; margin: 14px; padding: 15px; color: #ffffff; border-right: 2px solid rgb(81, 76, 76);">
+                    <h4>Products</h4>
+                    <li>Recepies</li>
+                    <li>Ingredients</li>
+                    <li>Prepration</li>
+                    <li>Nutrition</li>
+                </div>
+                <div class="about" style="display: flex; align-items: center; flex-direction: column; margin: 14px; padding: 15px; color: #ffffff; border-right: 2px solid rgb(81, 76, 76);">
+                    <h4>Contact</h4>
+                    <li>Noida, Uttar Pradesh</li>
+                    <li>Hrajz.work@gmail.com</li>
+                    <li>+9170****085*</li>
+                    <li>+917485***81*</li>
+                </div>
+                <div class="about" style="display: flex; align-items: center; flex-direction: column; margin: 14px; padding: 15px; color: #ffffff;">
+                    <h4>Follow us on</h4>
+                    <li>Instagram</li>
+                    <li>Twitter</li>
+                    <li>Linkedin</li>
+                    <li>Github</li>
+                    <li>Leetcode</li>
+                </div>
+            </div>
+            <p style="background-color: #090909; width: 100%; margin: 0; color: white; padding: 20px 0; text-align: center;"></div>
+                   © 2024 copyright : Vegieparadice.com
+            </p>
+          
+        </footer>
+        
+        
+
 </body>
 
 </html>
