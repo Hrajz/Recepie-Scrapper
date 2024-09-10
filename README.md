@@ -12,7 +12,7 @@ Recipe Finder is a web application that allows users to search for recipes based
 
 ## Demo
 
-Check out the live demo of the app here: [Recipe Finder](https://recepie-finder-iu05g6efn-hrajzs-projects.vercel.app)
+Check out the live demo of the app here: [Recipe Finder](https://recepie-finder-iota.vercel.app)
 
 ## Technologies Used
 
