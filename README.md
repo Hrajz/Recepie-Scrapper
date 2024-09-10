@@ -19,7 +19,7 @@ Check out the live demo of the app here: [Recipe Finder](https://recepie-finder-
 - **Node.js**: Backend server.
 - **Express.js**: Web framework for Node.js.
 - **EJS**: Template engine for rendering HTML.
-- **Web Scraping**: Custom scraper to fetch recipes from third-party sites.
+- **Web Scraping**: Cherrio to fetch recipes from third-party sites.
 - **CSS**: Custom styling for the app.
 - **Vercel**: Deployment platform.
 
